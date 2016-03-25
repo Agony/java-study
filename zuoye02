@@ -1,0 +1,17 @@
+import javax.swing.*;
+public class zy02 {
+
+	public static void main(String[] args) {
+		// pi的近似值
+		double sum=0;
+		//输入i值
+		String num=JOptionPane.showInputDialog("请输入i值：");
+		//类型转换为整形
+		int n=Integer.parseInt(num);
+		//计算pi
+		for(int i=1;i<=n;i++)
+			sum= sum+ 4*Math.pow(-1, i+1)/(2*i-1);
+		//输出pi
+		   JOptionPane.showMessageDialog(null,sum);
+		}
+	}
