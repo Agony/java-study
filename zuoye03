@@ -1,0 +1,46 @@
+public class zuoye03 {
+	
+	public static void main(String[] args) {
+		// 回文素数
+		int count=0;//记录已经找到的回文素数个数
+		int[] a=new int[101];//记录回文素数
+		int sum=0;
+		int k,j;
+		for(int i=2;count<100;i++)
+		{
+			boolean flag=true;//回文素数的标志
+			for(j=2;j<i;j++)//判断是否为素数
+			{
+				if(i%j==0)
+					flag=false;//若不是置为false
+			}
+			k=i;
+			sum=0;
+			while(true)//判断是否是回文数
+			{	
+				//将数倒过来
+				j = k%10;			
+				sum =sum*10+j;	
+				k=k/10;	
+				if(k==0) break;	
+			}		
+			if(sum!=i)//判断原来的数和倒过来的是否相等
+				flag=false;
+			
+			if(flag==true)//如果是回文素数，记录
+			{
+				count++;
+				a[count]=i;	
+			}
+		}
+		//输出
+		for(int i=0;i<10;i++)
+			{
+			for(j=1;j<=10;j++)
+			System.out.print(a[i*10+j]+" ");
+			System.out.print("\n");
+			}
+		
+	}
+
+}
