@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class zy01 {
+
+	public static void main(String[] args) {
+		//数字金字塔
+		//输入n
+		Scanner in =new Scanner(System.in);
+		int n;
+		n=in.nextInt();
+		
+		for(int i=1;i<=n;i++)//控制输出的行
+		{
+			for(int j=1;j<=(n-i);j++)
+				System.out.print("  ");//输出前面的空格
+			for(int j=i;j>=1;j--)
+				System.out.print(" "+j);//输出金字塔左侧
+			for(int j=2;j<=i;j++)
+				System.out.print(" "+j);//输出金字塔右侧
+			
+			System.out.print("\n");
+		}
+	}
+}
